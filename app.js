@@ -2,6 +2,7 @@
 let amigos = [];
 
 function adicionarAmigo(){
+    let tipoFunção = "add";
     let nomeAmigo = document.querySelector('input').value;
     if (nomeAmigo == ""){
         alert("Por favor, insira um nome!");
@@ -9,11 +10,10 @@ function adicionarAmigo(){
         amigos.push(nomeAmigo);
         document.querySelector('input').value = "";
         alert(amigos);
-        alert(amigos.length);
-       
-        
+        alert(amigos.length);        
     }criarLista();
 }
+
 function criarLista() {
     let lista = document.getElementById('listaAmigos'); 
     lista.innerHTML = ""; 
@@ -22,4 +22,13 @@ function criarLista() {
         novoItem.textContent = amigos[i];
         lista.appendChild(novoItem);
     }
+}
+
+function sortearAmigo (){
+    let sorteado = parseInt(Math.random()*amigos.length);
+    let lista = document.getElementById('listaAmigos'); 
+    lista.innerHTML = ""; 
+    let novoItem = document.createElement('li');
+    novoItem.textContent = amigos[sorteado];
+    lista.appendChild(novoItem);
 }
