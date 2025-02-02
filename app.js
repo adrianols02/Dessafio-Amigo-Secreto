@@ -9,8 +9,6 @@ function adicionarAmigo(){
     }else{
         amigos.push(nomeAmigo);
         document.querySelector('input').value = "";
-        alert(amigos);
-        alert(amigos.length);        
     }criarLista();
 }
 
